@@ -21,7 +21,7 @@ void add(int newvalue) {
   Node* current = head;
   if (current == NULL) {
   head = new Node();
-  head->setvalue(newvalue);
+  head->setValue(newvalue);
   }
   else {
     while (current->getNext() != NULL) {
@@ -37,3 +37,5 @@ void print(Node* next) {
   }
   if (next != NULL) {
     cout << next->getValue() << " ";
+    print(next->getNext());
+  }
