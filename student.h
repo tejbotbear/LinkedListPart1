@@ -1,3 +1,6 @@
+#ifndef STUDENT_H
+#define STUDENT_H
+
 #include <iostream>
 
 using namespace std;
@@ -5,8 +8,6 @@ using namespace std;
 class Student {
  public:
   char* studentname;
-}
+};
 
-  Student() {
-    studentname = new char[100];
-  }
+#endif

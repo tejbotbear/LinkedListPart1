@@ -1,5 +1,11 @@
+// Tej Hiremath
+// This is the main.cpp file for the Linked Lists assignments.
+// 1/13/23
+
+
 #include <iostream>
 #include "Node.h"
+#include "student.h"
 
 using namespace std;
 
@@ -19,16 +25,17 @@ int main() {
 
 void add(int newvalue) {
   Node* current = head;
+  Student* student;
   if (current == NULL) {
-  head = new Node();
-  head->setValue(newvalue);
+    student = new Student();
+    head = new Node(student);
   }
   else {
     while (current->getNext() != NULL) {
     current = current->getNext();
    }
-    current->setNext(new Node());
-    current->getNext()->setValue(newvalue);
+    current->setNext(new Node(student)); 
+  }
 }
   
 void print(Node* next) {
@@ -36,6 +43,7 @@ void print(Node* next) {
     cout << "List:";
   }
   if (next != NULL) {
-    cout << next->getValue() << " ";
+    cout << next->getStudent() << " ";
     print(next->getNext());
   }
+}
